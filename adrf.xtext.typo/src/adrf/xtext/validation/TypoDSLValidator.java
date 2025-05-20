@@ -3,6 +3,14 @@
  */
 package adrf.xtext.validation;
 
+import org.eclipse.xtext.validation.Check;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import adrf.xtext.typoDSL.Document;
+import adrf.xtext.typoDSL.TypoDSLPackage;
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +19,24 @@ package adrf.xtext.validation;
  */
 public class TypoDSLValidator extends AbstractTypoDSLValidator {
 	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					TypoDSLPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
+	public static final String INVALID_DATE = "invalidDate";
+
+    @Check
+    public void checkValidDate(Document doc) {
+        String dateString = doc.getDatetime().replace('"', ' ').strip();
+        
+        if (dateString == null) return;
+
+        // SimpleDateFormat must match the DATE terminal format: "dd-MM-yyyy"
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        format.setLenient(false);
+        try {
+            Date date = format.parse(dateString);
+        } catch (ParseException e) {
+            error("Invalid date format or nonexistent date: must be a valid calendar date in dd-MM-yyyy format",
+                  TypoDSLPackage.Literals.DOCUMENT__DATETIME,
+                  INVALID_DATE);
+        }
+    }
 	
 }
