@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/adrf.typo/src-gen" creationIcons="false" editDirectory="/adrf.typo.edit/src-gen"
+    editorDirectory="/adrf.typo.editor/src-gen" modelPluginID="adrf.typo" modelName="Typo"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>typo.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Typo" basePackage="adrf" disposableProviderFactory="true" ecorePackage="typo.ecore#/">
+    <genClasses ecoreClass="typo.ecore#//Document">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Document/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Document/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Document/datetime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Document/tldr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typo.ecore#//Document/blocks"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//Blocks">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Blocks/label"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//Section">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Section/title"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//Subsection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Subsection/title"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//Paragraph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typo.ecore#//Paragraph/inlineitems"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//InlineItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//InlineItem/text"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//Normal"/>
+    <genClasses ecoreClass="typo.ecore#//Bold"/>
+    <genClasses ecoreClass="typo.ecore#//Italic"/>
+    <genClasses ecoreClass="typo.ecore#//Image">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Image/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Image/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Image/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Image/caption"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//CodeBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//CodeBlock/language"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//CodeBlock/text"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//Itemize">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typo.ecore#//Itemize/items"/>
+    </genClasses>
+    <genClasses ecoreClass="typo.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typo.ecore#//Link/url"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

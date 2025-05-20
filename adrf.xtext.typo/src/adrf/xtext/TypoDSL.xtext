@@ -1,0 +1,82 @@
+grammar adrf.xtext.TypoDSL with org.eclipse.xtext.common.Terminals
+
+generate typoDSL "http://www.xtext.adrf/TypoDSL"
+
+Document:
+  'doc' '{'
+    'title:' title=STRING
+    'author:' author=STRING
+    'date:' datetime=DATE
+    'tldr:' tldr=STRING
+    blocks+=Blocks*
+  '}'
+;
+
+Blocks:
+    Section | Subsection | Paragraph | Image | CodeBlock | Itemize
+;
+
+Section:
+    '+section' title=STRING
+    blocks+=Blocks*
+;
+
+Subsection:
+    '+sub' title=STRING
+    blocks+=Blocks*
+;
+
+
+Paragraph:
+    '+p'
+    inlineitems+=InlineItem+
+;
+
+Image:
+    '+img' '{'
+      'url:' url=STRING
+      'width:' width=INT
+      'height:' height=INT
+      ('caption:' caption=STRING)?
+    '}'
+;
+
+CodeBlock:
+    '+code' '{'
+      'language:' language=STRING
+      'text:' text=STRING
+    '}'
+;
+
+Itemize:
+    '+list'
+    items+=ListItem+
+;
+
+ListItem:
+    '-' inline+=InlineItem
+;
+
+
+InlineItem:
+    Normal | Bold | Italic | Link 
+;
+
+Normal:
+    '*' text=STRING
+;
+
+Bold:
+    '~bold' text=STRING
+;
+
+Italic:
+    '~italic' text=STRING
+;
+
+Link:
+    '~link' '{' 'url:' url=STRING 'text:' text=STRING '}'
+;
+
+terminal DATE:
+    '"' ('0'..'9')('0'..'9') '-' ('0'..'9')('0'..'9') + '-' ('0'..'9')('0'..'9')('0'..'9')('0'..'9') '"';

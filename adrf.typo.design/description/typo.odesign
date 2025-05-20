@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="desing" version="15.4.0.202401051836">
+  <ownedViewpoints name="typo.viewpoint" modelFileExtension="typo">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DocumentOutline" domainClass="typo::Document" enablePopupBars="true">
+      <metamodel href="../../adrf.typo/metamodel/typo.ecore#/"/>
+      <defaultLayer name="Default">
+        <containerMappings name="DocumentContainer" preconditionExpression="aql:true" semanticCandidatesExpression="aql:self" domainClass="typo::Document" childrenPresentation="VerticalStack">
+          <subContainerMappings name="BlocksContainer" semanticCandidatesExpression="aql:self.blocks" domainClass="typo::Blocks" childrenPresentation="List">
+            <subNodeMappings name="SectionBlock" semanticCandidatesExpression="aql:self" domainClass="typo::Section">
+              <style xsi:type="style:SquareDescription" labelSize="16" showIcon="false" labelExpression="feature:title" labelAlignment="LEFT" labelPosition="node">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="SubectionBlock" semanticCandidatesExpression="aql:self" domainClass="typo::Subsection">
+              <style xsi:type="style:SquareDescription" labelSize="14" showIcon="false" labelExpression="feature:title" labelAlignment="LEFT">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>bold</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="ParagraphBlock" semanticCandidatesExpression="aql:self" domainClass="typo::Paragraph">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Paragraph ' + self.eContainer().eContents()->filter(typo::Paragraph)->indexOf(self)">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="ImageBlock" semanticCandidatesExpression="aql:self" domainClass="typo::Image">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Image ' + self.eContainer().eContents()->filter(typo::Image)->indexOf(self)">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="CodeBlock" semanticCandidatesExpression="aql:self" domainClass="typo::CodeBlock">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Code Block ' + self.eContainer().eContents()->filter(typo::CodeBlock)->indexOf(self)">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="ItemizeBlock" semanticCandidatesExpression="aql:self" domainClass="typo::Itemize">
+              <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'Itemize ' + self.eContainer().eContents()->filter(typo::Itemize)->indexOf(self)">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+          </subContainerMappings>
+          <style xsi:type="style:ShapeContainerStyleDescription" borderSizeComputationExpression="1" labelSize="14" showIcon="false" labelExpression="aql:self.title + ' by ' + self.author" roundedCorner="true" widthComputationExpression="10">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>italic</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createSection" containerMappings="//@ownedViewpoints[name='typo.viewpoint']/@ownedRepresentations[name='DocumentOutline']/@defaultLayer/@containerMappings[name='DocumentContainer']/@subContainerMappings[name='BlocksContainer']" iconPath="/adrf.typo.design/icons/h1.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typo::Section" referenceName="blocks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:'sec:'+container.blocks->filter(typo::Section)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="aql:'Section '+container.blocks->filter(typo::Section)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createSubsection" containerMappings="//@ownedViewpoints[name='typo.viewpoint']/@ownedRepresentations[name='DocumentOutline']/@defaultLayer/@containerMappings[name='DocumentContainer']/@subContainerMappings[name='BlocksContainer']" iconPath="/adrf.typo.design/icons/h2.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typo::Subsection" referenceName="blocks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:'subsec:'+container.blocks->filter(typo::Subsection)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="title" valueExpression="aql:'Subsection '+container.blocks->filter(typo::Subsection)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createParagraph" containerMappings="//@ownedViewpoints[name='typo.viewpoint']/@ownedRepresentations[name='DocumentOutline']/@defaultLayer/@containerMappings[name='DocumentContainer']/@subContainerMappings[name='BlocksContainer']" iconPath="/adrf.typo.design/icons/p.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typo::Paragraph" referenceName="blocks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:'par:'+container.blocks->filter(typo::Paragraph)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createImage" containerMappings="//@ownedViewpoints[name='typo.viewpoint']/@ownedRepresentations[name='DocumentOutline']/@defaultLayer/@containerMappings[name='DocumentContainer']/@subContainerMappings[name='BlocksContainer']" iconPath="/adrf.typo.design/icons/img.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typo::Image" referenceName="blocks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:'img:'+container.blocks->filter(typo::Image)->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="caption" valueExpression="aql:'Image :'+container.blocks->filter(typo::Image)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createCodeBlock" containerMappings="//@ownedViewpoints[name='typo.viewpoint']/@ownedRepresentations[name='DocumentOutline']/@defaultLayer/@containerMappings[name='DocumentContainer']/@subContainerMappings[name='BlocksContainer']" iconPath="/adrf.typo.design/icons/code.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typo::CodeBlock" referenceName="blocks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:'code:'+container.blocks->filter(typo::CodeBlock)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createItemize" containerMappings="//@ownedViewpoints[name='typo.viewpoint']/@ownedRepresentations[name='DocumentOutline']/@defaultLayer/@containerMappings[name='DocumentContainer']/@subContainerMappings[name='BlocksContainer']" iconPath="/adrf.typo.design/icons/item.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typo::Itemize" referenceName="blocks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:'item:'+container.blocks->filter(typo::Itemize)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

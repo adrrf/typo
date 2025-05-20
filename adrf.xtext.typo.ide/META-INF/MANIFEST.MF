@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: adrf.xtext.typo.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: adrf.xtext.typo.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: adrf.xtext.typo.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: adrf.xtext.typo,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: adrf.xtext.ide.contentassist.antlr,
+ adrf.xtext.ide.contentassist.antlr.internal

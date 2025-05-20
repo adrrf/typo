@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typo:Document xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typo="http://www.example.org/typo" xsi:schemaLocation="http://www.example.org/typo ../metamodel/typo.ecore" title="sample text" author="adrián romero flores" datetime="2025-05-12T00:00:00.000+0200" tldr="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+  <blocks xsi:type="typo:Section" label="sec:intro" title="introduction"/>
+  <blocks xsi:type="typo:Paragraph">
+    <inlineitems xsi:type="typo:Normal" text="lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat arcu ut nunc ornare malesuada. Phasellus sed erat eros. Integer vitae tortor orci. Quisque porta diam sit amet imperdiet ultricies. Sed eget vulputate mi, ac lobortis nulla. Curabitur purus diam, ullamcorper eu diam at, tincidunt pharetra diam. Vestibulum scelerisque nunc sit amet metus pretium, a cursus nulla rhoncus. Praesent ornare aliquam nibh. Fusce eros felis, tempus eu viverra vel, consequat et urna. Sed in luctus justo, sed auctor nunc. "/>
+  </blocks>
+  <blocks xsi:type="typo:Itemize" label="">
+    <items xsi:type="typo:Normal" text="hola soy un item"/>
+    <items xsi:type="typo:Italic" text="Soy un item tumbaete"/>
+  </blocks>
+  <blocks xsi:type="typo:Subsection" label="sec:intro:linganguli" title="linganguli"/>
+  <blocks xsi:type="typo:Paragraph">
+    <inlineitems xsi:type="typo:Bold" text=" Linganguli guli guli wacha, lingangu, lingangu&#xA;&#xA;source: https://lyricsondemand.com/don_pollo/lingaguli_angelic_sound&#xA;"/>
+  </blocks>
+  <blocks xsi:type="typo:Section" label="sec:image" title="now it shall be an image"/>
+  <blocks xsi:type="typo:Image" label="fig:sample" height="250" width="500" url="sample" caption="Hi! this is a image"/>
+  <blocks xsi:type="typo:Image" label="fig:sample2" height="250" width="500" url="sample" caption="Hi! this is another image"/>
+  <blocks xsi:type="typo:Section" label="sec:code" title="now some code!"/>
+  <blocks xsi:type="typo:CodeBlock" label="code:sample" language="python" text="print(&quot;linganguli&quot;)"/>
+</typo:Document>

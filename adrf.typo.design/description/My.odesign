@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:description="http://www.eclipse.org/sirius/description/1.1.0"
+                   xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0"
+                   xmlns:style="http://www.eclipse.org/sirius/description/style/1.1.0"
+                   xmlns:diagram="http://www.eclipse.org/sirius/diagram/description/1.1.0"
+                   name="typo.group">
+
+  <ownedViewpoints name="typo.viewpoint" modelFileExtension="typo">
+    <ownedRepresentations xsi:type="diagram:DiagramDescription" 
+                          name="DocumentDiagram" 
+                          label="Document Diagram" 
+                          domainClass="typo.Document" 
+                          preconditionExpression="aql:true" 
+                          enablePopupBars="true">
+      
+      <defaultLayer name="Default">
+        <containerMappings name="DocumentContainer" 
+                           domainClass="typo.Document" 
+                           semanticCandidatesExpression="aql:self" 
+                           childrenPresentation="VerticalStack">
+          <subContainerMappings name="BlocksContainer" 
+                                domainClass="typo.Blocks" 
+                                semanticCandidatesExpression="aql:self.blocks" 
+                                childrenPresentation="List">
+            
+            <!-- Section Node -->
+            <subNodeMappings name="SectionNode" 
+                             domainClass="typo.Section" 
+                             semanticCandidatesExpression="aql:self" >
+              <style xsi:type="style:SquareDescription" 
+                     labelExpression="aql:self.title" 
+                     labelSize="12" 
+                     color="green" 
+                     labelAlignment="CENTER" />
+            </subNodeMappings>
+
+            <!-- Paragraph Node -->
+            <subNodeMappings name="ParagraphNode" 
+                             domainClass="typo.Parragraph" 
+                             semanticCandidatesExpression="aql:self" >
+              <style xsi:type="style:SquareDescription" 
+                     labelExpression="aql:'Paragraph'" 
+                     labelSize="10" 
+                     color="light_blue" 
+                     labelAlignment="LEFT" />
+            </subNodeMappings>
+
+            <!-- Reference Node -->
+            <subNodeMappings name="ReferenceNode" 
+                             domainClass="typo.Reference" 
+                             semanticCandidatesExpression="aql:self" >
+              <style xsi:type="style:SquareDescription" 
+                     labelExpression="aql:'Reference'" 
+                     labelSize="10" 
+                     color="orange" 
+                     labelAlignment="LEFT" />
+            </subNodeMappings>
+
+          </subContainerMappings>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
