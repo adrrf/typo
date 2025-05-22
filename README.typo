@@ -1,0 +1,100 @@
+
+doc {
+    title: "tYpO - A DSL for Formatted Text Writing"
+    author: "Adrián Romero Flores"
+    date: "22-05-2025"
+    tldr: "A domain-specific language for creating formatted documents, similar to Markdown/LaTeX."
+
+    +section "Introduction"
+    +img {
+        url: "https://i.imgur.com/On3RWtg.png"
+        width: 500
+        height: 250
+        caption: "tYpO logo"
+    }
+    +p ~bold"tYpO" *" is a Domain-Specific Language (DSL) designed for document creation, offering a modern approach to formatted text writing."
+    
+    +sub "Objective"
+    +p *"Create a document authoring system similar to Markdown and LaTeX, but with enhanced features and visual editing capabilities."
+    
+    +sub "Technology Stack"
+    +list
+    - ~bold"Ecore"
+    - ~bold"Sirius"
+    - ~bold"Xtext"
+    - ~bold"Xtend"
+
+    +section "Model"
+    +p *"The tYpO language is built upon a well-structured metamodel that defines the core elements of document creation:"
+    +img {
+        url: "https://i.imgur.com/51GM1Iw.png"
+        width: 1600
+        height: 600
+        caption: "tYpO model"
+    }
+    +p *"The model encompasses various document elements including:"
+    +list
+    - *"Document structure (title, author, date, tldr)"
+    - *"Content blocks (sections, paragraphs, images, code blocks)"
+    - *"Inline formatting (bold, italic, links)"
+    - *"Lists and itemization"
+
+    +section "Visual Editor"
+    +p *"The project includes a visual editor built with Eclipse Sirius, providing an intuitive graphical interface for document modeling."
+    +img {
+        url: "https://i.imgur.com/3FyHZDU.png"
+        width: 644
+        height: 465
+        caption: "Sirius visual editor"
+    }
+    +p *"The visual editor allows users to:"
+    +list
+    - *"Create and modify document structures graphically"
+    - *"Visualize relationships between document elements"
+    - *"Edit properties through dedicated forms"
+    - *"Real-time preview of document structure"
+
+    +section "Text-to-Model (T2M)"
+    +p *"The tYpO DSL provides a clean, intuitive syntax for creating documents. Here are some examples:"
+    
+    +sub "Document Structure"
+    +code {
+        language: "typo"
+        text: "doc {\n title: \"My Document\"\n author: \"John Doe\"\n date: \"2025-05-22\"\n tldr: \"Brief description\"\n // content blocks here\n}"
+    }
+    
+    +sub "Sections and Paragraphs"
+    +code {
+        language: "typo"
+        text: "+section \"Introduction\"\n+sub \"Overview\"\n+p *\"This is normal text \" ~bold\"with bold\" *\" and \" ~italic\"italic\" *\" formatting.\""
+    }
+    
+    +sub "Images and Code"
+    +code {
+        language: "typo"
+        text: "+img {\n    url: \"path/to/image.png\"\n    width: 500\n    height: 300\n    caption: \"Figure caption\"\n}\n\n+code {\n    language: \"java\"\n    text: \"public class Hello { ... }\"\n}"
+    }
+    
+    +sub "Lists and Links"
+    +code {
+        language: "typo"
+        text: "+list\n- *\"First item\"\n- ~bold\"Second item\"\n- ~link { url: \"https://example.com\" text: \"Link text\" }"
+    }
+
+    +section "Model-to-Text (M2T)"
+    +p *"The tYpO system includes multiple code generators that transform your models into various output formats:"
+    +list
+    - *"Markdown (.md) - For GitHub, documentation sites"
+    - *"LaTeX (.tex) - For academic papers, books"
+    - *"HTML (.html) - For web publishing"
+    
+    +p *"This multi-target approach allows you to write once and publish to multiple formats, maximizing content reusability."
+
+    +section "Example Usage"
+    +p *"Here's a simple example of a tYpO document:"
+    +code {
+        language: "typo"
+        text: "doc {\n    title: \"My First Document\"\n    author: \"Jane Smith\"\n    date: \"2025-05-22\"\n    tldr: \"A simple example document\"\n\n    +section \"Hello World\"\n    +p *\"Welcome to \" ~bold\"tYpO\" *\"! This is a simple example.\"\n    \n    +list\n    - *\"Easy to write\"\n    - *\"Multiple output formats\"\n    - *\"Visual editing support\"\n}"
+    }
+   
+}
